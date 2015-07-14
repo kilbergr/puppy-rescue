@@ -2,5 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #background{
- z-index: -10
+ z-index: -10;
+}
+
+#enter {
+
+	font-size: 36px;
+	text-align: right;
 }

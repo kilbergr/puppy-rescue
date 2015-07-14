@@ -1,8 +1,14 @@
 <h1>All the Puppies</h1>
+
+<div class="row">
 <% @puppies.each do |puppy| %>
-<div>
-<h4><%= puppy.name %></h4>
-<%= image_tag (puppy.image height: "100", alt:puppy.name )%>
-<button><%= link_to "MORE INFO", puppy_path(@puppy) %></button>
+  <div class="col-sm-6 col-md-4">
+  	<div class="thumbnail text-center">
+  		<h4><%= puppy.name %></h4>
+			<%= image_tag(puppy.image, height: "100")%>
+			<button class="btn"><%= link_to "MORE INFO", puppy_path(puppy) %></button>
+		</div>
+	</div>
+	<% end %>
 </div>
-<% end %>
+

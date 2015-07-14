@@ -14,13 +14,13 @@
  *= require_self
  */
 // First import  variables
-@import "bootswatch/journal/variables";
+@import "bootswatch/Flatly/variables";
 
 // Then bootstrap itself
 @import "bootstrap";
 
 // And finally bootswatch style itself
-@import "bootswatch/journal/bootswatch";
+@import "bootswatch/Flatly/bootswatch";
 // Here are the free themes you can use:
 
 // Amelia

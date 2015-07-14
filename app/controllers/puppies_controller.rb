@@ -19,7 +19,7 @@ class PuppiesController < ApplicationController
   end
 
   def show
-  	@puppy = puppy.find_by_id params[:id]
+  	@puppy = Puppy.find_by_id params[:id]
   end
 
   def edit
@@ -27,8 +27,8 @@ class PuppiesController < ApplicationController
   end
 
   def update
-  	@puppy = puppy.find_by_id params[:id]
-  	if @puppy.update
+  	@puppy = Puppy.find_by_id params[:id]
+  	if @puppy.update puppy_params
   		redirect_to puppy_path(@puppy), notice: "Successfully Updated Puppy Info"
   	else
   		render :edit
@@ -36,7 +36,7 @@ class PuppiesController < ApplicationController
   end
 
   def destroy
-  	puppy = puppy.find_by_id params[:id]
+  	puppy = Puppy.find_by_id params[:id]
   	if puppy.destroy
   		redirect_to puppies_path, alert: "Successfully Removed Puppy Info"
   	else

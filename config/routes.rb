@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get '/puppies/:id', to: 'puppies#show', as: :puppy
 
-  get '/puppies/:id/edit', to: 'puppies#edit'
+  get '/puppies/:id/edit', to: 'puppies#edit', as: :edit_puppy
   patch '/puppies/:id', to: 'puppies#update'
   put '/puppies/:id', to: 'puppies#update'
 
