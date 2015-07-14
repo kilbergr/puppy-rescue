@@ -1,17 +1,18 @@
 <h3>Meet <%= @puppy.name %></h3>
 <div class="jumbotron left">
   		<%if @puppy.image.blank? %>
-  		<%= image_tag("https://www.uchealth.org/PublishingImages/img-general/ABOUT-image-coming-soon.png", height: "60%") %>
+  		<%= image_tag("https://www.uchealth.org/PublishingImages/img-general/ABOUT-image-coming-soon.png", width: "65%") %>
 			<%else %>
-					<%= image_tag(@puppy.image, height: "60%")%>
+					<%= image_tag(@puppy.image, width: "65%")%>
 			<% end %>
 
 <div class="text-right">
+
 	<h4><%= @puppy.name %></h4>
 	<h4>Age: <%= @puppy.age %> years old</h4>
 	<h4>Breed: <%= @puppy.breed %></h4>
 	<h4>About <%= @puppy.name %>: </h4>
-	<h5><%= @puppy.bio %></h5>
+	<h5><%= @puppy.bio %></h5> 
 
 	<button><%=link_to "Edit Puppy", edit_puppy_path(@puppy)  %></button>
 	<button><%= link_to "Remove Puppy", @puppy, method: :delete, data: {confirm: "Are you sure you want to remove this puppy from the puppy rescue?"} %></button>
