@@ -1,0 +1,13 @@
+<h3>Meet <%= @puppy.name %></h3>
+<%=image_tag("<%= puppy.image %>", width: "400", class: "full_image")%>
+
+<div class="right">
+	<%= @puppy.name %>
+	<%= @puppy.age %>
+	<%= @puppy.breed %>
+	<%= @puppy.bio %>
+</div>
+<div>
+	<%=link_to "Edit Puppy", edit_puppy_path(@puppy)  %>
+	<%= link_to "Remove Puppy", @puppy, method: :delete, data: {confirm: "Are you sure you want to remove this puppy from the puppy rescue?"} %>
+</div>

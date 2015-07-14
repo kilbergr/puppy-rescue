@@ -1,0 +1,19 @@
+<% if @puppy.errors.any? %>
+	<% @puppy.errors.full_messages.each do |error| %>
+		<p style="color:red"><%=error %></p>
+		<% end %>
+<% end %>
+
+<%= form_for @puppy do |f| %>
+		<%= f.label "Name" %>
+		<%= f.text_field :name, autofocus: true %><br/>
+    <%= f.label "Age" %>
+    <%= f.text_field :age%><br />
+    <%= f.label "Breed" %>
+		<%= f.text_field :breed %><br/>
+		<%= f.label "Bio" %>
+		<%= f.text_field :bio %><br/>
+	  <%= f.label "Image (URL)" %>
+		<%= f.text_field :image %><br/>
+    <%= f.submit "Add Puppy"%>
+<% end %>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PuppyRescue</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+<% flash.each do |key, value| %>
+  <% if key == "notice" %>
+    <%= content_tag :div, value, class: "text-center alert alert-warning" %>
+  <% elsif key == "alert" %>
+    <%= content_tag :div, value, class: "text-center alert alert-danger" %>
+  <% else %>
+    <%= content_tag :div, value, class: "text-center alert alert-success" %>
+  <% end %>
+<% end %>
+
+<ul>
+	<li><%= link_to "WELCOME", root_path %></li>
+	<li> | </li>
+	<li><%= link_to "ABOUT", static_about_path %></li>
+	<li> | </li>
+	<li><%= link_to "CONTACT", static_contact_path %></li>
+	<li> | </li>
+	<li><%= link_to "PUPPIES", puppies_path %></li>
+	<li> | </li>
+	<li><%= link_to "ADD PUPPY", puppies_new_path %></li>
+</ul>
+
+<%= yield %>
+
+</body>
+</html>
