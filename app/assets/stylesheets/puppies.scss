@@ -5,8 +5,20 @@
  z-index: -10;
 }
 
-#enter {
+.enter {
+	font-size: 48px;
+	text-align: center;
+	margin-top: -8%;
+	z-index: 1;
+}
+.transparent {
+	background-color: white;
+	opacity: .5;
+	width: 400px;
+	height: 100px; 
+	z-index: -4;
+	margin-left: 33%;
+	margin-top: -60%;
+	text-align: center;
 
-	font-size: 36px;
-	text-align: right;
 }

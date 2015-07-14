@@ -1,6 +1,11 @@
 <h3>Meet <%= @puppy.name %></h3>
 <div class="jumbotron">
-<%= image_tag(@puppy.image, width: "60%")%>
+  		<%if @puppy.image.blank? %>
+  		<%= image_tag("https://www.uchealth.org/PublishingImages/img-general/ABOUT-image-coming-soon.png", height: "60%") %>
+			<%else %>
+					<%= image_tag(@puppy.image, height: "60%")%>
+			<% end %>
+
 <div class="text-right">
 	<h4><%= @puppy.name %></h4>
 	<h4>Age: <%= @puppy.age %> years old</h4>

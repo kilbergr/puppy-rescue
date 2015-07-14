@@ -1,11 +1,15 @@
-<h1>All the Puppies</h1>
+<h1 class="text-center">All the Puppies</h1>
 
 <div class="row">
 <% @puppies.each do |puppy| %>
   <div class="col-sm-6 col-md-4">
   	<div class="thumbnail text-center">
-  		<h4><%= puppy.name %></h4>
+  		<h3><%= puppy.name %></h3>
+  		<%if !puppy.image.blank? %>
 			<%= image_tag(puppy.image, height: "100")%>
+			<%else %>
+			<%= image_tag("https://www.uchealth.org/PublishingImages/img-general/ABOUT-image-coming-soon.png", height: "100") %>
+			<% end %>
 			<button class="btn"><%= link_to "MORE INFO", puppy_path(puppy) %></button>
 		</div>
 	</div>
